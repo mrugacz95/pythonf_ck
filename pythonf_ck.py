@@ -94,6 +94,7 @@ def main():
     args = parser.parse_args(namespace=Opt)
     if not os.path.isfile(args.file):
         print(f'Input file not found: {args.file}', file=sys.stderr)
+        return
     if not os.path.isfile(args.output):
         print(f'Output file not found: {args.output}', file=sys.stderr)
     source = open(args.file).read()

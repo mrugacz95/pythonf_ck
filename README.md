@@ -1,11 +1,11 @@
-##### PythonF_ck
+### PythonF_ck
 
 PythonF_ck is esoteric language based on Python 3+ using only 10 characters: __(ex'c+=%);__
 
 Based on:  
+* [JSFuck](https://github.com/aemkei/jsfuck)
 * [Pyfuck](https://github.com/wanqizhu/pyfuck)  
 * [Fewest (distinct) characters for Turing Completeness](https://codegolf.stackexchange.com/questions/110648/fewest-distinct-characters-for-turing-completeness/110722#110722)  
-* [JSFuck](https://github.com/aemkei/jsfuck)
 ##### Example
 Code below is simple `Hello world!`
 ```python3
@@ -13,7 +13,7 @@ c='%c';e=+(()==());ee=e;ex=ee+e;ec=ex+e;xe=ec+e;xx=xe+e;xc=xx+e;ce=xc+e;cx=ce+e;
 cx+e;xee=ecc+e;xex=xee+e;xec=xex+e;xxe=c%(cx+xee);xxx=c%(xe+xex);xxc=c%(xe+eec);xce=c%(ee+xex);xcx=c%(ex+xex);xcc=c%(xx+xee);cee=c%(xc+xex);cex=c%(ex+ece);cec=c%(ee+xee);cxe=c%(ex+ee
 c);cxx=c%(cc+xex);cxc=c%(ec+eec);cce=c%(ee+exe);x=xcx+xxx+xcc+c%xex+cee+c%exe+xxc+cex+cec+xxe+xxe+xce+cxe+cxx+xce+xxx+xxe+c%xee+cxc+xxc+cce;exec(x)
 ```
-##### Basics
+### Basics
 ```
 False    =>  ()==''
 True     =>  ()==()
@@ -24,7 +24,19 @@ string   =>  ''
 a        =>  '%c'%97 # where 97 is +(()==()) repeated 97 times
 run      =>  exec()  
 ```
-##### Explanation
+### Usage
+```bash
+$ python pythonf_ck.py -h
+usage: Change python code to PythonF_ck [-h] file output
+
+positional arguments:
+  file        File to process
+  output      File to save output
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+### Explanation
 1. Numbers  
    To provide numbers we can use tuple and empty string comparison and then cast it to integer value:
    ```python3
